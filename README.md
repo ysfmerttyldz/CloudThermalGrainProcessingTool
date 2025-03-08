@@ -26,13 +26,13 @@ Create the following folder structure for your project:
 Copy
 Project/
 │
-├── Inputs/               # Place your input images here
-├── Outputs/              # Processed images will be saved here
-│   ├── Cloud/            # Cloud-processed images
-│   └── Grain/            # Grain-processed images
+├── Inputs/ # Place your input images here
+├── Outputs/ # Processed images will be saved here
+│ ├── Cloud/ # Cloud-processed images
+│ └── Grain/ # Grain-processed images
 │
-├── Controller.py         # Main script
-└── Alpha_Mask.png        # Alpha mask (will be generated automatically)
+├── Controller.py # Main script
+└── Alpha_Mask.png # Alpha mask (will be generated automatically)
 
 Step 2: Run the Tool
 -Place your images in the Inputs folder.
@@ -42,11 +42,10 @@ Step 2: Run the Tool
 python Controller.py alpha_multiplier gamma_param opacity_factor grain_intensity
 
 Parameters
--alpha_multiplier	Multiplier for the mask's alpha values.
--gamma_param	        Controls the amount of cloud in the mask (should not be lower than 1).
--opacity_factor	        Affects the opacity of all clouds after the mask is created (final step).
--grain_intensity	        Controls the intensity of the film grain effect.
-
+-alpha_multiplier Multiplier for the mask’s alpha values.
+-gamma_param Controls the amount of cloud in the mask (should not be lower than 1).
+-opacity_factor Affects the opacity of all clouds after the mask is created (final step).
+-grain_intensity Controls the intensity of the film grain effect.
 
 For the best results, use the following settings:
 -python Controller.py 0.8 2 0.9 0.7
@@ -58,6 +57,3 @@ Notes
 Build Tools or any package problem you can send mail me. ysfmertyldzz@mail.com
 
 THANK YOU!
-
-
-
