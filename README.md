@@ -1,4 +1,4 @@
-Image Processing Tool: Cloud and Grain Effect
+Image Processing Tool: Cloud Thermal and Grain Effect
 This tool processes images by adding cloud-like effects and film grain. It is designed to be fast, accurate, and easy to use. Below are the instructions for setting up and using the tool.
 
 Table of Contents
