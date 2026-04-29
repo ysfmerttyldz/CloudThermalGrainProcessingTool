@@ -1,4 +1,4 @@
-Cloud and Grain Image Processing Tool
+Cloud Grain Data Augmentaion Tool
 ========================================
 
 A lightweight Python tool for applying cloud-like atmospheric effects and film grain to images. Designed for batch processing with configurable parameters.
