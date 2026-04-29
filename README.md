@@ -3,6 +3,36 @@ Cloud and Grain Image Processing Tool
 
 A lightweight Python tool for applying cloud-like atmospheric effects and film grain to images. Designed for batch processing with configurable parameters.
 
+How It Works
+------------
+
+The tool processes images through a modular pipeline with two independent effect branches:
+
+### Cloud Effect Pipeline
+
+1. **Mask Generation** (`CreateMask.py`): Produces a procedural cloud alpha mask using gamma correction and noise-based cloud density simulation. The mask is saved as `Alpha_Mask.png` on first run and reused for subsequent images to ensure style consistency across a batch.
+
+2. **Mask Processing** (`MaskScripts.py`): Adjusts the generated mask using the user-provided parameters:
+   - `gamma_param` controls how dense the cloud coverage appears (gamma correction on the mask)
+   - `alpha_multiplier` scales the mask's alpha channel intensity
+   - `opacity_factor` sets the final blend strength when compositing the cloud overlay onto the original image
+
+3. **Compositing**: The processed mask is blended with the input image using alpha blending, producing a cloud-covered output saved to `Outputs/Cloud/`.
+
+### Grain Effect Pipeline
+
+1. **Noise Generation** (`AddGrain.py`): Generates film-grain-style noise (likely Perlin or simplex noise via the `noise` library) scaled by `grain_intensity`.
+
+2. **Blending**: The noise texture is overlaid onto the original image and saved to `Outputs/Grain/`.
+
+### Batch Processing
+
+`Controller.py` orchestrates the pipeline:
+- Reads all images from `Inputs/`
+- Applies both cloud and grain effects sequentially using the same parameter set
+- Writes results to the respective `Outputs/` subdirectories
+- Supports any image format readable by OpenCV (JPG, PNG, BMP, etc.)
+
 Installation
 ----------
 
