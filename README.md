@@ -71,15 +71,15 @@ Example Outputs
 
 ### Cloud Effect
 
-![Cloud Effect Example 1](cloud1.jpg)
+![Cloud Effect Example 1](NormalToCloudGrainThermalConverter/cloud1.jpg)
 
-![Cloud Effect Example 2](cloud3.jpg)
+![Cloud Effect Example 2](NormalToCloudGrainThermalConverter/cloud3.jpg)
 
 ### Grain Effect
 
-![Grain Effect Example 1](grain1.jpg)
+![Grain Effect Example 1](NormalToCloudGrainThermalConverter/grain1.jpg)
 
-![Grain Effect Example 2](grain2.jpg)
+![Grain Effect Example 2](NormalToCloudGrainThermalConverter/grain2.jpg)
 
 Presets
 -------
