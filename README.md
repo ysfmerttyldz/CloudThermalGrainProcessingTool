@@ -69,6 +69,8 @@ Parameters
 Example Outputs
 ---------------
 
+![Original Image](NormalToCloudGrainThermalConverter/original.jpg)
+
 ### Cloud Effect
 
 ![Cloud Effect Example 1](NormalToCloudGrainThermalConverter/cloud1.jpg)
