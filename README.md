@@ -94,4 +94,4 @@ Presets
 | Vintage film        | 0.6              | 1.5         | 0.7            | 1.2             |
 
 
-For further assistance, contact: ysfmertyyldz@mail.com
+For further assistance, contact: ysfmerttyldz@mail.com
