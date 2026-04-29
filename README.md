@@ -1,59 +1,79 @@
-Image Processing Tool: Cloud Thermal and Grain Effect
-This tool processes images by adding cloud-like effects and film grain. It is designed to be fast, accurate, and easy to use. Below are the instructions for setting up and using the tool.
+Cloud and Grain Image Processing Tool
+========================================
 
-Table of Contents
--Installation
--Usage
--Folder Structure
--Parameters
--Recommended Settings
+A lightweight Python tool for applying cloud-like atmospheric effects and film grain to images. Designed for batch processing with configurable parameters.
 
 Installation
-Step 1: Install Required Packages
-Upgrade pip (Python package manager):
-python -m pip install --upgrade pip
-Install the required libraries:
-pip install opencv-python numpy pillow noise matplotlib
+----------
 
-Microsoft C++ Build Tools (Required for some libraries):
-Download and install the Microsoft C++ Build Tools.
-During installation, ensure you select the C++ build tools and Windows SDK options.
+### Requirements
+
+- Python 3.8+
+- OpenCV
+- NumPy
+- Pillow
+- noise
+- matplotlib
+
+### Setup
+
+Upgrade pip and install dependencies:
+
+    python -m pip install --upgrade pip
+    pip install opencv-python numpy pillow noise matplotlib
+
+**Windows users:** Some packages require a C++ compiler. If you encounter build errors, install Microsoft C++ Build Tools with the "Desktop development with C++" workload selected.
+
+Project Structure
+-----------------
+
+    Project/
+    ├── Inputs/              # Source images
+    ├── Outputs/
+    │   ├── Cloud/           # Cloud effect outputs
+    │   └── Grain/           # Grain effect outputs
+    ├── Controller.py        # Main script
+    └── Alpha_Mask.png       # Generated automatically on first run
 
 Usage
-Step 1: Prepare the Folder Structure
-Create the following folder structure for your project:
+-----
 
-Copy
-Project/
-│
-├── Inputs/ # Place your input images here
-├── Outputs/ # Processed images will be saved here
-│ ├── Cloud/ # Cloud-processed images
-│ └── Grain/ # Grain-processed images
-│
-├── Controller.py # Main script
-└── Alpha_Mask.png # Alpha mask (will be generated automatically)
+1. Place your images in the `Inputs/` directory.
+2. Run the script from the project root:
 
-Step 2: Run the Tool
--Place your images in the Inputs folder.
--Open a terminal in the project directory.
--Run the following command:
+    python Controller.py <alpha_multiplier> <gamma_param> <opacity_factor> <grain_intensity>
 
-python Controller.py alpha_multiplier gamma_param opacity_factor grain_intensity
+### Recommended Settings
+
+    python Controller.py 0.8 2.0 0.9 0.7
 
 Parameters
--alpha_multiplier Multiplier for the mask’s alpha values.
--gamma_param Controls the amount of cloud in the mask (should not be lower than 1).
--opacity_factor Affects the opacity of all clouds after the mask is created (final step).
--grain_intensity Controls the intensity of the film grain effect.
+----------
 
-For the best results, use the following settings:
--python Controller.py 0.8 2 0.9 0.7
+| Parameter          | Description                                          | Range       |
+|--------------------|------------------------------------------------------|-------------|
+| `alpha_multiplier` | Scales the alpha channel of the cloud mask             | 0.3 to 1.5  |
+| `gamma_param`      | Controls cloud density. Must be >= 1.0                 | 1.0 to 4.0  |
+| `opacity_factor`   | Final opacity of the cloud overlay                     | 0.1 to 1.0  |
+| `grain_intensity`  | Strength of the film grain effect                      | 0.0 to 1.5  |
 
-Notes
--Ensure all dependencies are installed correctly.
--Adjust the parameters (alpha_multiplier, gamma_param, opacity_factor, grain_intensity) to achieve the desired effect.
--If you encounter any issues, ensure that the Microsoft C++ Build Tools are installed.If it is not related with Microsoft C++
-Build Tools or any package problem you can send mail me. ysfmertyldzz@mail.com
+Presets
+-------
 
-THANK YOU!
+| Effect              | alpha_multiplier | gamma_param | opacity_factor | grain_intensity |
+|---------------------|------------------|-------------|----------------|-----------------|
+| Light haze          | 0.4              | 1.2         | 0.5            | 0.2             |
+| Balanced (default)  | 0.8              | 2.0         | 0.9            | 0.7             |
+| Heavy clouds        | 1.2              | 3.5         | 1.0            | 0.3             |
+| Vintage film        | 0.6              | 1.5         | 0.7            | 1.2             |
+
+Troubleshooting
+---------------
+
+| Issue                        | Solution                                            |
+|------------------------------|-----------------------------------------------------|
+| `ModuleNotFoundError`        | Ensure all dependencies are installed via pip       |
+| Build failure during install | Install Microsoft C++ Build Tools                   |
+| Empty or missing output      | Verify that `Inputs/` contains valid image files    |
+
+For further assistance, contact: ysfmertyldzz@mail.com
