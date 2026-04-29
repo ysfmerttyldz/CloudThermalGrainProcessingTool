@@ -32,8 +32,17 @@ Project Structure
     ├── Outputs/
     │   ├── Cloud/           # Cloud effect outputs
     │   └── Grain/           # Grain effect outputs
+    ├── AddGrain.py          # Grain effect module
+    ├── CreateMask.py        # Mask generation module
+    ├── MaskScripts.py       # Mask processing utilities
+    ├── ThermalConverter.py  # Thermal conversion module
     ├── Controller.py        # Main script
-    └── Alpha_Mask.png       # Generated automatically on first run
+    ├── Alpha_Mask.png       # Generated automatically on first run
+    ├── cloud1.jpg           # Example: cloud effect output
+    ├── cloud3.jpg           # Example: cloud effect output
+    ├── grain1.jpg           # Example: grain effect output
+    ├── grain2.jpg           # Example: grain effect output
+    └── README.md
 
 Usage
 -----
@@ -57,6 +66,21 @@ Parameters
 | `opacity_factor`   | Final opacity of the cloud overlay                     | 0.1 to 1.0  |
 | `grain_intensity`  | Strength of the film grain effect                      | 0.0 to 1.5  |
 
+Example Outputs
+---------------
+
+### Cloud Effect
+
+![Cloud Effect Example 1](cloud1.jpg)
+
+![Cloud Effect Example 2](cloud3.jpg)
+
+### Grain Effect
+
+![Grain Effect Example 1](grain1.jpg)
+
+![Grain Effect Example 2](grain2.jpg)
+
 Presets
 -------
 
@@ -67,13 +91,5 @@ Presets
 | Heavy clouds        | 1.2              | 3.5         | 1.0            | 0.3             |
 | Vintage film        | 0.6              | 1.5         | 0.7            | 1.2             |
 
-Troubleshooting
----------------
 
-| Issue                        | Solution                                            |
-|------------------------------|-----------------------------------------------------|
-| `ModuleNotFoundError`        | Ensure all dependencies are installed via pip       |
-| Build failure during install | Install Microsoft C++ Build Tools                   |
-| Empty or missing output      | Verify that `Inputs/` contains valid image files    |
-
-For further assistance, contact: ysfmertyldzz@mail.com
+For further assistance, contact: ysfmertyyldz@mail.com
